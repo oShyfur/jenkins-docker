@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t shyfur/mydev .'
+        sh 'docker build -t shyfur/jenkins-docker .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push shyfur/mydev'
+        sh 'docker push shyfur/jenkins-docker'
       }
     }
   }
