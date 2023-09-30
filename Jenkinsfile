@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t oShyfur/mygit .'
+        sh 'docker build -t oShyfur/jenkins-docker .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push oShyfur/mygit'
+        sh 'docker push oShyfur/jenkins-docker'
       }
     }
   }
