@@ -12,11 +12,11 @@ pipeline {
         sh 'docker build -t shyfur/jenkins-docker .'
       }
     }
-    stage('Login') {
+   /* stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
-    }
+    }*/
     stage('Push') {
       steps {
         sh "sudo docker login -u 'axf5p8j94qn5/md.shyfur.rahman@oracle.com' -p 'Pgb}y(H-K2h{s>o33x{X' sin.ocir.io" 
