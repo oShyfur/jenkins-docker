@@ -19,7 +19,10 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push shyfur/jenkins-docker'
+        sh "sudo docker login -u 'axf5p8j94qn5/md.shyfur.rahman@oracle.com' -p 'Pgb}y(H-K2h{s>o33x{X' sin.ocir.io" 
+        sh "sudo docker tag customimage:1 sin.ocir.io/axf5p8j94qn5/customimage:1" 
+        sh 'sudo docker push sin.ocir.io/axf5p8j94qn5/customimage:1'
+        /* sh 'docker push shyfur/jenkins-docker' */
       }
     }
   }
