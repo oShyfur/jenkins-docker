@@ -12,17 +12,14 @@ pipeline {
         sh 'docker build -t shyfur/jenkins-docker .'
       }
     }
-   /* stage('Login') {
+    stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
-    }*/
+    }
     stage('Push') {
       steps {
-        sh "sudo docker login -u 'axf5p8j94qn5/md.shyfur.rahman@oracle.com' -p -S 'mjw3wpu*gpq5QBV8cdv' sin.ocir.io"
-        sh "sudo docker tag customimage:1 sin.ocir.io/axf5p8j94qn5/customimage:1" 
-        sh 'sudo docker push sin.ocir.io/axf5p8j94qn5/customimage:1'
-        /* sh 'docker push shyfur/jenkins-docker' */
+      sh 'docker push shyfur/jenkins-docker'
       }
     }
   }
